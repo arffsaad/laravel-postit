@@ -26,7 +26,7 @@
     <body class="antialiased">
                 <div class="container bg-dark text-white p-5 my-5 border">
                         <div class="pt-6 pb-6 pl-6">
-                                    <h2>Posts</h2>
+                                    <h2>Post-it here</h2>
                                     <table class="table text-white">
                                         <thead>
                                             <tr>
@@ -54,5 +54,6 @@
                                     </form>
                         </div>
                 </div>
+                <h6 class="small text-center">Made with &nbsp<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Logo.min.svg/2560px-Logo.min.svg.png" height="30px"></h6>
     </body>
 </html>
