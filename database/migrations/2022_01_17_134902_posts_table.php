@@ -17,6 +17,7 @@ class PostsTable extends Migration
             $table->id();
             $table->timestamps();
             $table->string('content');
+            $table->string('username');
         });
     }
 

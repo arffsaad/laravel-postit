@@ -16,7 +16,8 @@
 
         <!-- Styles -->
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-
+        <!-- Styles -->
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <style>
             body {
                 font-family: 'Nunito', sans-serif;
@@ -35,25 +36,39 @@
                                             <tr>
                                                 <th>Message</th>
                                                 <th>Time Posted</th>
+                                                @if (!Auth::guest())
+                                                <th>Author</th>
+                                                @endif
                                             </tr>
                                         </thead>
                                         <tbody>
                                             @foreach ($posts As $key => $value)
                                             <tr>                                            
-                                                <td>{{ $value->content }}</td>
+                                                <td class="text-wrap" style="width: 35rem">{{ $value->content }}</td>
                                                 <td>{{ $value->created_at }}</td>
+                                                @if (!Auth::guest())
+                                                    <td>{{ $value->username }}</td>
+                                                @endif
                                             </tr>
                                             @endforeach
                                         </tbody>
                                     </table>
                         </div>
+                        <h5 class="text-center text-white small">Login to see who wrote the messages!</h5>
                 </div>
+                 
                 <div class="container bg-dark p-5 my-5 border">
                         <div class="pt-6 pb-6 pl-6">
                                     <form method="post" action="/">
                                         <input type="text" name="content">
                                         <button type="submit" class="btn btn-success">Post</button>
                                         @csrf
+                                        @if (!Auth::guest())
+                                            <input type="hidden" value="{{Auth::user()->name}}" name="username">
+                                        @else
+                                            <input type="hidden" value="anonymous" name="username">
+                                        @endif
+                                        
                                     </form>
                         </div>
                 </div>

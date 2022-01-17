@@ -10,7 +10,7 @@ class Posts extends Model
     use HasFactory;
 
     protected $fillable = [
-        'content'
+        'content', 'username'
         ];
     protected $hidden = [
         'id', 'timestamps'

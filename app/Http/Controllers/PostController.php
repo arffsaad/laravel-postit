@@ -10,7 +10,8 @@ class PostController extends Controller
     public function insert(Request $request){
         $data = $request->all();
         Posts::create([
-            'content' => $data['content']
+            'content' => $data['content'],
+            'username' => $data['username']
         ]);
         return back();
     }
