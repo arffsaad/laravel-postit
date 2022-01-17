@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
+                <div class="card-header">My posts</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -13,8 +13,25 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
-                    {{ __('You are logged in!') }}
+                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>Message</th>
+                                                <th>Time Posted</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach ($posts As $key => $value)
+                                            @if (Auth::user()->name == $value->username)
+                                            <tr>                                            
+                                                <td class="text-wrap" style="width: 35rem">{{ $value->content }}</td>
+                                                <td>{{ $value->created_at }}</td>
+                                            </tr>
+                                            @endif
+                                            @endforeach
+                                        </tbody>
+                                    </table>
+                    
                 </div>
             </div>
         </div>
