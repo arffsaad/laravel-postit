@@ -17,3 +17,11 @@ use App\Http\Controllers\PostController;
 Route::get('/', [PostController::class, 'display']);
 
 Route::post('/', [PostController::class, 'insert']);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

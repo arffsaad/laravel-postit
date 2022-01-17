@@ -9,7 +9,7 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+        <title>Post-it Here!</title>
 
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}" defer></script>
@@ -24,9 +24,12 @@
         </style>
     </head>
     <body class="antialiased">
+    @extends('layouts.app')
+
+@section('content')
                 <div class="container bg-dark text-white p-5 my-5 border">
                         <div class="pt-6 pb-6 pl-6">
-                                    <h2>Post-it here</h2>
+                                    <h2>Posts</h2>
                                     <table class="table text-white">
                                         <thead>
                                             <tr>
@@ -55,5 +58,5 @@
                         </div>
                 </div>
                 <h6 class="small text-center">Made with &nbsp<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Logo.min.svg/2560px-Logo.min.svg.png" height="30px"></h6>
-    </body>
-</html>
+    @endsection
+    
